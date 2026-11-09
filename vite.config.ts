@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig(() => {
   return {
-    base: '/REPO-NAME/',
+    base: '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
