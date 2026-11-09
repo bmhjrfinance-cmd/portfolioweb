@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'DM Sans', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Syne', 'Space Grotesk', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --color-oled: #000000;
+  --color-mint: #00F5A0;
+  --color-crimson: #FF2D55;
+  --color-silver: #8A8A8E;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Vertical guide line style (Specification: rgba(255, 255, 255, 0.04)) */
+.guide-line {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 40%, rgba(255, 255, 255, 0) 0%);
+  background-position: left;
+  background-size: 1px 16px;
+  background-repeat: repeat-y;
+}
+
+/* High-performance GPU accelerated Marquee */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glow utility for neon mint and spatial highlights */
+.glow-mint {
+  box-shadow: 0 0 20px rgba(0, 245, 160, 0.35);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 20px rgba(255, 45, 85, 0.35);
+}
+
+.text-glow-mint {
+  text-shadow: 0 0 12px rgba(0, 245, 160, 0.5);
+}
